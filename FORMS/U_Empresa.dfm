@@ -1,0 +1,680 @@
+inherited Frm_Empresa: TFrm_Empresa
+  Caption = 'Cadastro de Empresas'
+  ClientHeight = 580
+  ClientWidth = 909
+  ExplicitWidth = 915
+  ExplicitHeight = 609
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel [0]
+    Left = 48
+    Top = 128
+    Width = 97
+    Height = 19
+    Caption = 'ID EMPRESA'
+    FocusControl = DB_Id_Empresa
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel [1]
+    Left = 48
+    Top = 182
+    Width = 117
+    Height = 19
+    Caption = 'RAZAO SOCIAL'
+    FocusControl = DB_Razao_Social
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel [2]
+    Left = 47
+    Top = 238
+    Width = 128
+    Height = 19
+    Caption = 'NOME FANTASIA'
+    FocusControl = DB_N_Fantasia
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label4: TLabel [3]
+    Left = 48
+    Top = 359
+    Width = 88
+    Height = 19
+    Caption = 'ENDERE'#199'O'
+    FocusControl = DB_Enderco
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label5: TLabel [4]
+    Left = 655
+    Top = 354
+    Width = 72
+    Height = 19
+    Caption = 'NUMERO'
+    FocusControl = DB_Numero
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label6: TLabel [5]
+    Left = 48
+    Top = 414
+    Width = 61
+    Height = 19
+    Caption = 'BAIRRO'
+    FocusControl = DB_Bairro
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label7: TLabel [6]
+    Left = 374
+    Top = 414
+    Width = 61
+    Height = 19
+    Caption = 'CIDADE'
+    FocusControl = DB_Cidade
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label8: TLabel [7]
+    Left = 719
+    Top = 414
+    Width = 21
+    Height = 19
+    Caption = 'UF'
+    FocusControl = DB_UF
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label9: TLabel [8]
+    Left = 294
+    Top = 296
+    Width = 82
+    Height = 19
+    Caption = 'TELEFONE'
+    FocusControl = Db_Telefone
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label10: TLabel [9]
+    Left = 48
+    Top = 296
+    Width = 40
+    Height = 19
+    Caption = 'CNPJ'
+    FocusControl = DB_CNPJ
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label11: TLabel [10]
+    Left = 48
+    Top = 472
+    Width = 51
+    Height = 19
+    Caption = 'EMAIL'
+    FocusControl = DB_Email
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label12: TLabel [11]
+    Left = 621
+    Top = 119
+    Width = 86
+    Height = 19
+    Caption = 'CADASTRO'
+    FocusControl = DB_cadastro
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label13: TLabel [12]
+    Left = 540
+    Top = 296
+    Width = 31
+    Height = 19
+    Caption = 'CEP'
+    FocusControl = DB_CEP
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label14: TLabel [13]
+    Left = 813
+    Top = 135
+    Width = 46
+    Height = 19
+    Caption = 'LOGO'
+    FocusControl = DB_Foto
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  inherited Panel_usuario: TPanel
+    Width = 909
+    TabOrder = 13
+    ExplicitWidth = 909
+  end
+  inherited Panel2: TPanel
+    Top = 539
+    Width = 909
+    TabOrder = 14
+    ExplicitTop = 539
+    ExplicitWidth = 909
+    inherited DBNavigator1: TDBNavigator
+      Hints.Strings = ()
+    end
+  end
+  object DB_Id_Empresa: TDBEdit [16]
+    Left = 48
+    Top = 144
+    Width = 134
+    Height = 27
+    DataField = 'ID_EMPRESA'
+    DataSource = ds_padrao
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+  end
+  object DB_Razao_Social: TDBEdit [17]
+    Left = 48
+    Top = 207
+    Width = 707
+    Height = 27
+    DataField = 'RAZAO_SOCIAL'
+    DataSource = ds_padrao
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+  end
+  object DB_N_Fantasia: TDBEdit [18]
+    Left = 48
+    Top = 263
+    Width = 707
+    Height = 27
+    DataField = 'N_FANTASIA'
+    DataSource = ds_padrao
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+  end
+  object DB_Enderco: TDBEdit [19]
+    Left = 48
+    Top = 384
+    Width = 578
+    Height = 27
+    DataField = 'ENDERECO'
+    DataSource = ds_padrao
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+  end
+  object DB_Numero: TDBEdit [20]
+    Left = 655
+    Top = 381
+    Width = 100
+    Height = 27
+    DataField = 'NUMERO'
+    DataSource = ds_padrao
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 7
+  end
+  object DB_Bairro: TDBEdit [21]
+    Left = 48
+    Top = 439
+    Width = 300
+    Height = 27
+    DataField = 'BAIRRO'
+    DataSource = ds_padrao
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 8
+  end
+  object DB_Cidade: TDBEdit [22]
+    Left = 374
+    Top = 439
+    Width = 300
+    Height = 27
+    DataField = 'CIDADE'
+    DataSource = ds_padrao
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 9
+  end
+  object DB_UF: TDBEdit [23]
+    Left = 715
+    Top = 439
+    Width = 40
+    Height = 27
+    DataField = 'UF'
+    DataSource = ds_padrao
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 10
+  end
+  object Db_Telefone: TDBEdit [24]
+    Left = 294
+    Top = 321
+    Width = 219
+    Height = 27
+    DataField = 'TELEFONE'
+    DataSource = ds_padrao
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 4
+  end
+  object DB_CNPJ: TDBEdit [25]
+    Left = 48
+    Top = 321
+    Width = 218
+    Height = 27
+    DataField = 'CNPJ'
+    DataSource = ds_padrao
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+  end
+  object DB_Email: TDBEdit [26]
+    Left = 48
+    Top = 497
+    Width = 707
+    Height = 27
+    DataField = 'EMAIL'
+    DataSource = ds_padrao
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 11
+  end
+  object DB_cadastro: TDBEdit [27]
+    Left = 621
+    Top = 144
+    Width = 134
+    Height = 27
+    DataField = 'CADASTRO'
+    DataSource = ds_padrao
+    Enabled = False
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 12
+  end
+  object DB_CEP: TDBEdit [28]
+    Left = 540
+    Top = 321
+    Width = 215
+    Height = 27
+    DataField = 'CEP'
+    DataSource = ds_padrao
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+  end
+  object DB_Foto: TDBImage [29]
+    Left = 776
+    Top = 160
+    Width = 125
+    Height = 130
+    DataField = 'LOGO'
+    DataSource = ds_padrao
+    Stretch = True
+    TabOrder = 15
+  end
+  object Btn_Foto: TBitBtn [30]
+    Left = 776
+    Top = 296
+    Width = 49
+    Height = 41
+    Caption = 'Foto'
+    Glyph.Data = {
+      F6060000424DF606000000000000360000002800000018000000180000000100
+      180000000000C006000000000000000000000000000000000000FAFAFAFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFEFEAEADED3D5D5C7C9D7CDCFD8CCCED8CCCED8CCCED9CCCED8CBCDD8CACC
+      D7CACCD7CACBD7C9CAD6C9CAD6C8CAD6C8CAD5C7C9D5C7C9D5C7C9D5C7C9D5C7
+      C9D5C7C9DED3D5EFEAEADED3D5D5C7C9D5C7C9D0C3C5D0C4C5D1C5C6D2C5C7D4
+      C5C7D5C6C8D5C7C9D5C7C9D5C7C9D5C7C9D5C7C9D5C7C9D5C7C9D5C7C9D5C7C9
+      D5C7C9D5C7C9D5C7C9D5C7C9D5C7C9DED3D55757575555555151514D4D4D4949
+      49CFC2C4D0C3C5D0C4C5D2C5C6D3C5C7D4C6C8C4B5B6B3A4A5A595959B8B8B9B
+      8B8BA59595B3A4A5C4B5B7D5C7C9D5C7C9D5C7C9D5C7C9D5C7C9575757555555
+      5151514D4D4D494949454545CCC1C3CDC2C4CFC3C5C9BBBDB0A2A29889899586
+      86958686958686958686958686958686988989B2A3A4CDBFC1D5C7C9D5C7C9D5
+      C7C9464646464646464646464646494949454545C8BEC0CABFC1C4B9BAA79B9B
+      9285859F9393BFB6B6D6CECFE4DDDDE4DDDED7CFD0C1B6B6A09494928585AA9D
+      9ECDBFC0D5C7C9D5C7C9434343434343434343484848494949454545C4BBBDC5
+      BCBEA89E9E8F8383A79D9ED1C9CADCD5D6D6CCCED1C6C8D2C7C8D9CFCFE0D8D9
+      D4CCCDA99E9E8F8383AFA2A3D5C7C9D5C7C94949494949494949494B4B4B4949
+      49454545BFB8BBB2AAAC8F8484988F8FCEC7C8D5CECFC2A7A2BA887AB26F59B3
+      6F59BB8A7BC8ABA6DCD3D4D3CBCC9A90908F8484C1B3B5D5C7C9505050505050
+      5050504E4E4E494949454545BBB6B8A09999888080B6AFB0D6D0D2BBA4A0AB73
+      61A5614ACAA06CCAA06CA5614AAD7462C3A9A5DED6D7BBB3B3888080A99F9FD3
+      C5C7585858585858585858515151494949454545B7B2B58F8A8A847E7ECAC6C7
+      C8C3C5A88177995D4ACAA06CCAA06CCAA06CCAA06C995D4AAD8479D3CACCD2CB
+      CD847E7E948D8ED0C3C55F5F5F5F5F5F5F5F5F555555494949454545B3AFB284
+      7F7F817C7CD6D3D5BDB8BB9165568B5A49CAA06CCAA06CCAA06CCAA06C8B5A49
+      926657CAC0C1DED9DA817C7C858080CCC1C36767676767676767675959594949
+      49454545AFAEB0817D7D7E7A7AD4D2D3B9B5B88260567B5549A06C3CA06C3CA0
+      6C3CA06C3C7B5549846157C6BEBFDCD7D87E7A7A827E7EC9BEC06F6F6F6F6F6F
+      6F6F6F5C5C5C494949454545BAB9BC8D8B8C7B7979C2C2C2BEBBBE847572664F
+      48A06C3CA06C3CA06C3CA06C3C664F48897975C9C3C5CAC6C77B79798B8788C5
+      BBBD7676767676767676765F5F5F494949454545CECED0B0B0B19E9D9EB3B2B3
+      C8C7C9979495655E5CF0E0C6F0E0C6534A47534A47675F5D9F999AD0CCCEADAB
+      AB797878989496C1B9BC7C7C7C7C7C7C7C7C7C626262494949454545D1D1D3C4
+      C4C6A5A5A5ADADADD3D3D4D3D2D4A09FA0F0E0C6F0E0C6545454727172999698
+      C9C6C8C7C5C69C9C9C9E9E9EBBB9BACDCCCE8181818181818181816464644949
+      49454545D5D5D6D5D5D6BDBDBEAAAAAABDBDBDDBDBDBE3E3E3DCDCDDD7D7D8D7
+      D7D8DCDCDDE3E3E3DBDBDBBDBDBDAAAAAABDBDBED5D5D6D5D5D6666666666666
+      666666666666494949454545D9D9DAD9D9DAD4D4D5C7C7C7B1B1B1BABABAD0D0
+      D0E0E0E0E9E9E9E9E9E9E0E0E0D0D0D0BABABAB1B1B1BFBFC0D4D4D5D9D9DAD9
+      D9DA5757575555555151514D4D4D494949454545DCDCDDDCDCDDDCDCDD9D9D9D
+      A9A9A9B9B9B9B7B7B7B7B7B7B7B7B7B7B7B7B7B7B7B7B7B7B9B9B9C8C8C8D7D7
+      D8DCDCDDDCDCDDDCDCDD5757575555555151514D4D4D494949DFDFE0DFDFE0DF
+      DFE0DFDFE0999999999999D5D5D6CBCBCCC3C3C3BDBDBDBDBDBDC3C3C3CBCBCC
+      D5D5D6DFDFE0DFDFE0DFDFE0DFDFE0E3E3E3EEEEEFE5E5E6E2E2E3E2E2E3E2E2
+      E3E2E2E3E2E2E3E2E2E3E2E2E3E2E2E3E2E2E3E2E2E3E2E2E3E2E2E3E2E2E3E2
+      E2E3E2E2E3E2E2E3E2E2E3E2E2E3E2E2E3E2E2E3E5E5E6EEEEEFF9F9F9F3F3F3
+      EFEFF0F1F1F2F1F1F2F1F1F2F1F1F2F1F1F2F1F1F2F1F1F2F1F1F2F0F0F1F0F0
+      F1F0F0F1F0F0F1F0F0F1F0F0F0F0F0F0F0F0F0F0F0F0EFEFF0EFEFF0F3F3F3F9
+      F9F9FFFFFFFFFFFFFFFFFFA8A8A8C4C4C4BEBEBE929292FFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA8A8A8C4C4C4BEBEBE929292FF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+    Layout = blGlyphTop
+    TabOrder = 16
+    OnClick = Btn_FotoClick
+  end
+  object Btn_Limpa_Foto: TBitBtn [31]
+    Left = 852
+    Top = 296
+    Width = 49
+    Height = 41
+    Caption = 'Clear'
+    Glyph.Data = {
+      42090000424D4209000000000000420000002800000018000000180000000100
+      20000300000000090000A6000000A600000000000000000000000000FF0000FF
+      0000FF000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF004340389C3936
+      30C0393630C0393630C0393630C0393630C0393630C0393630C0393630C04340
+      389CFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF004340389C3936
+      30C0393630C0393630C0393630C0393630C0393630C0393630C0393630C04340
+      389CFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF004340389C393630C0393630C0393630C0393630C04340389CFFFF
+      FF00FFFFFF00181C6949131754B9111751C0131754B9181C6949FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF004340389C393630C0393630C0393630C0393630C04340389C1A1A
+      660A0D103BDF080A25FF1A2074FF1B227AFF1A2074FF080A25FF0D103BDF1A1A
+      660AFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF001A1A660A0C10
+      38E511144BFF3541EEFF3643F4FF3643F4FF3643F4FF3541EEFF11144BFF0C10
+      38E51C1C7109FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF001A1A660A0C1038E51114
+      4BFF3541EEFF3643F4FF3643F4FF3643F4FF3643F4FF3643F4FF3541EEFF1115
+      49FF140E18F255390009FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0011154CC710144AFF3541
+      EEFF3643F4FF3643F4FF3643F4FF3643F4FF3643F4FF3643F4FF3743EDFF3321
+      1FFF180D03FF311C06E555390009FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF001224800E050617FD323EE1FF3643
+      F4FF3643F4FF3643F4FF3643F4FF3643F4FF3643F4FF3743EDFF342120FF4527
+      08FFCA7118FF402408FF311C06E555390009FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF001224800E050617FD323EE1FF3643
+      F4FF3643F4FF3643F4FF3643F4FF3643F4FF3743EDFF342120FF452708FFCF74
+      19FFD27619FFCD7318FF402408FF321C06E455390009FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0011154CC710144AFF3541
+      EEFF3643F4FF3643F4FF3643F4FF3743EDFF342120FF452708FFCF7419FFD276
+      19FFD27619FFD27619FFCD7318FF402408FF321C06E455390009FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF001A1A660A0C1038E51114
+      4BFF3541EEFF3643F4FF3743EDFF342120FF452708FFCF7419FFD27619FFD276
+      19FFD27619FFD27619FFD27619FFCD7318FF402408FF321C06E460400008FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF001C1C71090C10
+      39E511144BFF3641E7FF342120FF452708FFCF7419FFD27619FFD27619FFD276
+      19FFD27619FFD27619FFD27619FFD27619FFCD7318FF402408FF331D07E46040
+      0008FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF001C1C
+      71090C1039E5110B0CFF442608FFCF7419FFD27619FFD27619FFD27619FFD276
+      19FFD27619FFD27619FFD27619FFD27619FFD27619FFCD7318FF402408FF331D
+      07E460400008FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF001C1C710921140BF13F2308FFCD7318FFD27619FFD27619FFD27619FFD276
+      19FFD27619FFD27619FFD27619FFD27619FFD27619FFD27619FFCD7318FF4024
+      08FF391F07DCFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF0055390009311C06E5402408FFCD7318FFD27619FFD27619FFD276
+      19FFD27619FFD27619FFD27619FFD27619FFD27619FFD27619FFCD7318FF4024
+      08FF392007DCFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF0055390009321C06E4402408FFCD7318FFD27619FFD276
+      19FFD27619FFD27619FFD27619FFD27619FFD27619FFCD7318FF402408FF341D
+      07E360400008FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF0055390009321C06E4402408FFCD7318FFD276
+      19FFD27619FFD27619FFD27619FFD27619FFCD7318FF402408FF341D07E36040
+      0008FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0055390009321C06E4402408FFCD73
+      18FFD27619FFD27619FFD27619FFCD7318FF402408FF341D07E360400008FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0060400008321C06E44024
+      08FFCD7318FFD27619FFCD7318FF402408FF341D07E360400008FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0060400008331D
+      07E4402408FFC87018FF402408FF341D07E360400008FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF006040
+      0008341D07E3100902FF341D07E360400008FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF0060400008562F098860400008FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00}
+    Layout = blGlyphTop
+    TabOrder = 17
+    OnClick = Btn_Limpa_FotoClick
+  end
+  inherited q_padrao: TFDQuery
+    UpdateOptions.AssignedValues = [uvFetchGeneratorsPoint, uvGeneratorName]
+    UpdateOptions.FetchGeneratorsPoint = gpImmediate
+    UpdateOptions.GeneratorName = 'GEN_ID_EMPRESA'
+    UpdateOptions.AutoIncFields = 'ID_EMPRESA'
+    SQL.Strings = (
+      'select * from empresa')
+    Left = 408
+    Top = 72
+    object q_padraoID_EMPRESA: TIntegerField
+      FieldName = 'ID_EMPRESA'
+      Origin = 'ID_EMPRESA'
+      ProviderFlags = [pfInWhere, pfInKey]
+      Required = True
+    end
+    object q_padraoRAZAO_SOCIAL: TStringField
+      FieldName = 'RAZAO_SOCIAL'
+      Origin = 'RAZAO_SOCIAL'
+      Required = True
+      Size = 100
+    end
+    object q_padraoN_FANTASIA: TStringField
+      FieldName = 'N_FANTASIA'
+      Origin = 'N_FANTASIA'
+      Required = True
+      Size = 100
+    end
+    object q_padraoENDERECO: TStringField
+      FieldName = 'ENDERECO'
+      Origin = 'ENDERECO'
+      Required = True
+      Size = 100
+    end
+    object q_padraoNUMERO: TIntegerField
+      FieldName = 'NUMERO'
+      Origin = 'NUMERO'
+      Required = True
+    end
+    object q_padraoBAIRRO: TStringField
+      FieldName = 'BAIRRO'
+      Origin = 'BAIRRO'
+      Required = True
+      Size = 100
+    end
+    object q_padraoCIDADE: TStringField
+      FieldName = 'CIDADE'
+      Origin = 'CIDADE'
+      Required = True
+      Size = 100
+    end
+    object q_padraoUF: TStringField
+      FieldName = 'UF'
+      Origin = 'UF'
+      Required = True
+      FixedChar = True
+      Size = 2
+    end
+    object q_padraoTELEFONE: TStringField
+      FieldName = 'TELEFONE'
+      Origin = 'TELEFONE'
+      Required = True
+      EditMask = '!\(99\)00000-0000;1;_'
+      Size = 15
+    end
+    object q_padraoCNPJ: TStringField
+      FieldName = 'CNPJ'
+      Origin = 'CNPJ'
+      Required = True
+      EditMask = '00.000.000/0000-00;0;_'
+    end
+    object q_padraoEMAIL: TStringField
+      FieldName = 'EMAIL'
+      Origin = 'EMAIL'
+      Required = True
+      Size = 100
+    end
+    object q_padraoCADASTRO: TDateField
+      FieldName = 'CADASTRO'
+      Origin = 'CADASTRO'
+      Required = True
+    end
+    object q_padraoCEP: TStringField
+      FieldName = 'CEP'
+      Origin = 'CEP'
+      Required = True
+      EditMask = '00000\-999;0;_'
+      Size = 14
+    end
+    object q_padraoLOGO: TBlobField
+      FieldName = 'LOGO'
+      Origin = 'LOGO'
+    end
+  end
+  inherited ds_padrao: TDataSource
+    Left = 456
+    Top = 72
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 520
+    Top = 72
+  end
+end
