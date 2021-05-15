@@ -12,6 +12,7 @@ object Frm_Principal: TFrm_Principal
   Font.Style = [fsBold]
   Menu = MainMenu1
   OldCreateOrder = False
+  Position = poDesktopCenter
   PixelsPerInch = 96
   TextHeight = 17
   object Panel_principal: TPanel

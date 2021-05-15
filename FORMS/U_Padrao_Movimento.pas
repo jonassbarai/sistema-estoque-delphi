@@ -15,7 +15,7 @@ type
     Panel1: TPanel;
     Panel3: TPanel;
     DBGrid1: TDBGrid;
-    BitBtn1: TBitBtn;
+    BtAdd: TBitBtn;
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
     BitBtn4: TBitBtn;

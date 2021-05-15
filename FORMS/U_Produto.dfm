@@ -143,14 +143,30 @@ inherited Frm_Produto: TFrm_Produto
     ParentFont = False
   end
   inherited Panel_usuario: TPanel
-    TabOrder = 2
+    TabOrder = 9
+    inherited Btn_deletar: TBitBtn
+      TabOrder = 7
+    end
+    inherited Btn_Alterar: TBitBtn
+      TabOrder = 1
+    end
+    inherited Btn_Atualizar: TBitBtn
+      TabOrder = 2
+    end
+    inherited Btn_Gravar: TBitBtn
+      TabOrder = 3
+    end
     inherited Btn_Pesquisar: TBitBtn
+      TabOrder = 5
       OnClick = Btn_PesquisarClick
+    end
+    inherited Btn_Sair: TBitBtn
+      TabOrder = 6
     end
   end
   inherited Panel2: TPanel
     Top = 406
-    TabOrder = 3
+    TabOrder = 10
     ExplicitTop = 406
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()
@@ -169,7 +185,7 @@ inherited Frm_Produto: TFrm_Produto
     Font.Name = 'Times New Roman'
     Font.Style = []
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 0
   end
   object DB_descricao: TDBEdit [13]
     Left = 64
@@ -184,7 +200,7 @@ inherited Frm_Produto: TFrm_Produto
     Font.Name = 'Times New Roman'
     Font.Style = []
     ParentFont = False
-    TabOrder = 0
+    TabOrder = 1
   end
   object DB_Id_Fornecedor: TDBEdit [14]
     Left = 172
@@ -199,7 +215,7 @@ inherited Frm_Produto: TFrm_Produto
     Font.Name = 'Times New Roman'
     Font.Style = []
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 7
   end
   object DB_VL_Custo: TDBEdit [15]
     Left = 64
@@ -214,7 +230,7 @@ inherited Frm_Produto: TFrm_Produto
     Font.Name = 'Times New Roman'
     Font.Style = []
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 2
   end
   object DB_VL_Venda: TDBEdit [16]
     Left = 241
@@ -229,7 +245,7 @@ inherited Frm_Produto: TFrm_Produto
     Font.Name = 'Times New Roman'
     Font.Style = []
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 3
   end
   object DB_Estoque: TDBEdit [17]
     Left = 439
@@ -244,11 +260,11 @@ inherited Frm_Produto: TFrm_Produto
     Font.Name = 'Times New Roman'
     Font.Style = []
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 4
   end
   object DB_Estoque_MIN: TDBEdit [18]
     Left = 619
-    Top = 216
+    Top = 220
     Width = 145
     Height = 27
     DataField = 'ESTOQUE_MIN'
@@ -259,7 +275,7 @@ inherited Frm_Produto: TFrm_Produto
     Font.Name = 'Times New Roman'
     Font.Style = []
     ParentFont = False
-    TabOrder = 8
+    TabOrder = 5
   end
   object DB_Nome_Fornecedor: TDBEdit [19]
     Left = 328
@@ -274,7 +290,7 @@ inherited Frm_Produto: TFrm_Produto
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 9
+    TabOrder = 8
   end
   object DB_Unidade: TDBComboBox [20]
     Left = 64
@@ -295,7 +311,7 @@ inherited Frm_Produto: TFrm_Produto
       'PCT'
       'P'#199)
     ParentFont = False
-    TabOrder = 10
+    TabOrder = 6
   end
   object DB_CADASTRO: TDBEdit [21]
     Left = 630

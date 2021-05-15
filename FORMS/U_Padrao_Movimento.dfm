@@ -16,7 +16,7 @@ inherited Frm_Padrao_Movimento: TFrm_Padrao_Movimento
       ExplicitLeft = 600
       ExplicitWidth = 284
     end
-    object BitBtn1: TBitBtn
+    object BtAdd: TBitBtn
       Left = 40
       Top = 6
       Width = 55
