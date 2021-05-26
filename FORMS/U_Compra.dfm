@@ -39,6 +39,7 @@ inherited Frm_Compra: TFrm_Compra
     inherited BitBtn3: TBitBtn
       Left = 315
       Width = 70
+      OnClick = BitBtn3Click
       ExplicitLeft = 315
       ExplicitWidth = 70
     end

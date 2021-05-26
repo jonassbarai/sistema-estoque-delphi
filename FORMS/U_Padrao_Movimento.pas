@@ -21,6 +21,8 @@ type
     BitBtn4: TBitBtn;
     q_padrao_item: TFDQuery;
     da_padrao_item: TDataSource;
+    procedure Btn_deletarClick(Sender: TObject);
+    procedure Btn_AlterarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,5 +35,16 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFrm_Padrao_Movimento.Btn_AlterarClick(Sender: TObject);
+begin
+  inherited;
+  q_padrao_item.Edit;
+end;
+
+procedure TFrm_Padrao_Movimento.Btn_deletarClick(Sender: TObject);
+begin
+q_padrao.Delete;
+end;
 
 end.
