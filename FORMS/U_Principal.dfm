@@ -13,6 +13,7 @@ object Frm_Principal: TFrm_Principal
   Menu = MainMenu1
   OldCreateOrder = False
   Position = poDesktopCenter
+  ShowHint = True
   PixelsPerInch = 96
   TextHeight = 17
   object Panel_principal: TPanel
@@ -29,6 +30,7 @@ object Frm_Principal: TFrm_Principal
       Top = 0
       Width = 90
       Height = 90
+      Hint = 'Abre tela de cadastro de usu'#225'rio'
       Caption = 'Usu'#225'rio'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -561,6 +563,7 @@ object Frm_Principal: TFrm_Principal
       Top = 0
       Width = 90
       Height = 90
+      Hint = 'Abre tela de cadastro da Empresa'
       Caption = 'Empresa'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -1093,6 +1096,7 @@ object Frm_Principal: TFrm_Principal
       Top = 0
       Width = 90
       Height = 90
+      Hint = 'Abre tela de cadastro de Clientes'
       Caption = 'clientes'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -1625,6 +1629,7 @@ object Frm_Principal: TFrm_Principal
       Top = 0
       Width = 90
       Height = 90
+      Hint = 'Abre tela de cadastro de Fornecedores'
       Caption = 'Fornecedores'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -2157,6 +2162,7 @@ object Frm_Principal: TFrm_Principal
       Top = 0
       Width = 90
       Height = 90
+      Hint = 'Abre tela de Vendas'
       Caption = 'Vendas'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -2682,12 +2688,14 @@ object Frm_Principal: TFrm_Principal
         000000000000}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = SpeedButton5Click
     end
     object SpeedButton6: TSpeedButton
       Left = 496
       Top = 0
       Width = 90
       Height = 90
+      Hint = 'Abre tela de cadastro de Formas de Pagamento'
       Caption = 'Forma PGTO'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -3220,6 +3228,7 @@ object Frm_Principal: TFrm_Principal
       Top = 0
       Width = 90
       Height = 90
+      Hint = 'Sai do Sistema'
       Caption = 'Fechar'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -3752,6 +3761,7 @@ object Frm_Principal: TFrm_Principal
       Top = 0
       Width = 90
       Height = 90
+      Hint = 'Trocar o Usu'#225'rio do sistema'
       Caption = 'Troca Usu'#225'rio'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -4283,6 +4293,7 @@ object Frm_Principal: TFrm_Principal
       Top = 0
       Width = 90
       Height = 90
+      Hint = 'Abre tela de Compras'
       Caption = 'Compras'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -4815,6 +4826,7 @@ object Frm_Principal: TFrm_Principal
       Top = 0
       Width = 90
       Height = 90
+      Hint = 'Abre tela de cadastro de Produtos'
       Caption = 'Produtos'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -5402,6 +5414,7 @@ object Frm_Principal: TFrm_Principal
       end
       object Vendas1: TMenuItem
         Caption = '&Vendas'
+        OnClick = Vendas1Click
       end
     end
     object Relatrios1: TMenuItem
@@ -5427,6 +5440,9 @@ object Frm_Principal: TFrm_Principal
     end
     object SobreoSistema1: TMenuItem
       Caption = 'Sobre o Sistema'
+      object Ajuda1: TMenuItem
+        Caption = 'Ajuda'
+      end
     end
   end
 end

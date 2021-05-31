@@ -18,7 +18,8 @@ uses
   U_Pesq_Produto in '..\FORMS\U_Pesq_Produto.pas' {Frm_Pesq_Produto},
   U_Pesq_Forma_Pgto in '..\FORMS\U_Pesq_Forma_Pgto.pas' {Frm_Pesq_Forma_Pgto},
   U_Padrao_Movimento in '..\FORMS\U_Padrao_Movimento.pas' {Frm_Padrao_Movimento},
-  U_Compra in '..\FORMS\U_Compra.pas' {Frm_Compra};
+  U_Compra in '..\FORMS\U_Compra.pas' {Frm_Compra},
+  U_Venda in '..\FORMS\U_Venda.pas' {Frm_Venda};
 
 {$R *.res}
 

@@ -9,6 +9,12 @@ inherited Frm_Compra: TFrm_Compra
   inherited Panel_usuario: TPanel
     Width = 969
     ExplicitWidth = 969
+    inherited Btn_Alterar: TBitBtn
+      Left = 130
+      Top = 6
+      ExplicitLeft = 130
+      ExplicitTop = 6
+    end
   end
   inherited Panel2: TPanel
     Top = 506
@@ -297,11 +303,11 @@ inherited Frm_Compra: TFrm_Compra
       ParentFont = False
     end
     object Label11: TLabel
-      Left = 281
-      Top = 7
+      Left = 410
+      Top = 6
       Width = 87
       Height = 19
-      Caption = 'VL_CUSTO'
+      Caption = 'Valor Custo'
       FocusControl = DB_VL_Custo
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -311,8 +317,8 @@ inherited Frm_Compra: TFrm_Compra
       ParentFont = False
     end
     object Label2: TLabel
-      Left = 410
-      Top = 7
+      Left = 281
+      Top = 6
       Width = 68
       Height = 19
       Caption = 'Desconto'
@@ -353,11 +359,12 @@ inherited Frm_Compra: TFrm_Compra
     end
     object DB_Valor: TDBEdit
       Left = 742
-      Top = 27
+      Top = 29
       Width = 150
       Height = 27
       DataField = 'VALOR'
       DataSource = ds_padrao
+      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -17
@@ -373,6 +380,7 @@ inherited Frm_Compra: TFrm_Compra
       Height = 27
       DataField = 'ID_PRODUTO'
       DataSource = da_padrao_item
+      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -17
@@ -396,14 +404,16 @@ inherited Frm_Compra: TFrm_Compra
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 2
+      OnExit = DB_QTDEExit
     end
     object DB_VL_Custo: TDBEdit
-      Left = 281
+      Left = 410
       Top = 29
-      Width = 104
+      Width = 127
       Height = 27
       DataField = 'VL_CUSTO'
       DataSource = da_padrao_item
+      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -17
@@ -413,7 +423,7 @@ inherited Frm_Compra: TFrm_Compra
       TabOrder = 3
     end
     object DB_Desconto: TDBEdit
-      Left = 410
+      Left = 281
       Top = 29
       Width = 111
       Height = 27
@@ -426,6 +436,7 @@ inherited Frm_Compra: TFrm_Compra
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 4
+      OnExit = DB_DescontoExit
     end
     object DB_subtotal: TDBEdit
       Left = 560
@@ -434,6 +445,7 @@ inherited Frm_Compra: TFrm_Compra
       Height = 27
       DataField = 'TOTAL_ITEM'
       DataSource = da_padrao_item
+      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -17
@@ -492,7 +504,6 @@ inherited Frm_Compra: TFrm_Compra
       end>
   end
   inherited q_padrao: TFDQuery
-    Active = True
     UpdateOptions.AssignedValues = [uvFetchGeneratorsPoint, uvGeneratorName]
     UpdateOptions.FetchGeneratorsPoint = gpImmediate
     UpdateOptions.GeneratorName = 'GEN_ID_COMPRA'
@@ -562,7 +573,6 @@ inherited Frm_Compra: TFrm_Compra
     Top = 160
   end
   inherited q_padrao_item: TFDQuery
-    Active = True
     IndexFieldNames = 'ID_COMPRA'
     AggregatesActive = True
     MasterFields = 'ID_COMPRA'
@@ -582,7 +592,7 @@ inherited Frm_Compra: TFrm_Compra
         Name = 'ID_COMPRA'
         DataType = ftAutoInc
         ParamType = ptInput
-        Value = 1
+        Value = 12
       end>
     object q_padrao_itemSEQUENCIA: TIntegerField
       FieldName = 'SEQUENCIA'

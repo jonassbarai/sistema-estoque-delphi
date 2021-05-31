@@ -23,6 +23,7 @@ type
     da_padrao_item: TDataSource;
     procedure Btn_deletarClick(Sender: TObject);
     procedure Btn_AlterarClick(Sender: TObject);
+    procedure Btn_NovoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,12 +40,19 @@ implementation
 procedure TFrm_Padrao_Movimento.Btn_AlterarClick(Sender: TObject);
 begin
   inherited;
+  q_padrao_item.Open;
   q_padrao_item.Edit;
 end;
 
 procedure TFrm_Padrao_Movimento.Btn_deletarClick(Sender: TObject);
 begin
 q_padrao.Delete;
+end;
+
+procedure TFrm_Padrao_Movimento.Btn_NovoClick(Sender: TObject);
+begin
+  inherited;
+  q_padrao_item.Open;
 end;
 
 end.

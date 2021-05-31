@@ -1,6 +1,7 @@
 object Frm_Padrao: TFrm_Padrao
   Left = 0
   Top = 0
+  Hint = 'Cria um novo cadastro'
   BorderStyle = bsDialog
   Caption = 'Formul'#225'rio Padr'#227'o'
   ClientHeight = 408
@@ -14,6 +15,7 @@ object Frm_Padrao: TFrm_Padrao
   KeyPreview = True
   OldCreateOrder = False
   Position = poScreenCenter
+  ShowHint = True
   OnClose = FormClose
   OnKeyPress = FormKeyPress
   PixelsPerInch = 96
@@ -98,6 +100,7 @@ object Frm_Padrao: TFrm_Padrao
       Top = 7
       Width = 90
       Height = 45
+      Hint = 'Deleta um cadastro Existente'
       Caption = '&Deletar'
       Glyph.Data = {
         F6060000424DF606000000000000360000002800000018000000180000000100
@@ -164,6 +167,7 @@ object Frm_Padrao: TFrm_Padrao
       Top = 7
       Width = 90
       Height = 45
+      Hint = 'Altera um cadastro existente'
       Caption = '&Alterar'
       Glyph.Data = {
         F6060000424DF606000000000000360000002800000018000000180000000100
@@ -230,6 +234,7 @@ object Frm_Padrao: TFrm_Padrao
       Top = 7
       Width = 90
       Height = 45
+      Hint = 'Atualiza para as informa'#231#245'es mais recentes'
       Caption = '&Atualizar'
       Enabled = False
       Glyph.Data = {
@@ -297,6 +302,7 @@ object Frm_Padrao: TFrm_Padrao
       Top = 7
       Width = 90
       Height = 45
+      Hint = 'Cancela as altera'#231#245'es'
       Caption = '&Cancelar'
       Enabled = False
       Glyph.Data = {
@@ -364,6 +370,7 @@ object Frm_Padrao: TFrm_Padrao
       Top = 7
       Width = 90
       Height = 45
+      Hint = 'Grava as altera'#231#245'es'
       Caption = '&Gravar'
       Enabled = False
       Glyph.Data = {
@@ -431,6 +438,7 @@ object Frm_Padrao: TFrm_Padrao
       Top = 7
       Width = 90
       Height = 45
+      Hint = 'Abre a tela de pesquisa'
       Caption = '&Pesquisar'
       Glyph.Data = {
         F6060000424DF606000000000000360000002800000018000000180000000100
@@ -496,6 +504,7 @@ object Frm_Padrao: TFrm_Padrao
       Top = 7
       Width = 90
       Height = 45
+      Hint = 'Sai da tela'
       Caption = '&Sair'
       Glyph.Data = {
         F6060000424DF606000000000000360000002800000018000000180000000100

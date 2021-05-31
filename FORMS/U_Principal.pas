@@ -42,6 +42,7 @@ type
     Listavendas1: TMenuItem;
     SobreoSistema1: TMenuItem;
     Vendas1: TMenuItem;
+    Ajuda1: TMenuItem;
     procedure SpeedButton7Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure Bt_UsuarioClick(Sender: TObject);
@@ -52,6 +53,7 @@ type
     procedure abre_tela_produto();
     procedure abre_tela_forma_pgto();
     procedure abre_tela_compra();
+    procedure abre_tela_venda();
     procedure SpeedButton2Click(Sender: TObject);
     procedure Empresa1Click(Sender: TObject);
     procedure Usurio1Click(Sender: TObject);
@@ -65,6 +67,8 @@ type
     procedure FormaPgto1Click(Sender: TObject);
     procedure Compras1Click(Sender: TObject);
     procedure SpeedButton9Click(Sender: TObject);
+    procedure SpeedButton5Click(Sender: TObject);
+    procedure Vendas1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -79,7 +83,7 @@ implementation
 {$R *.dfm}
 
 uses U_Usuario, U_Empresa, U_Cliente, U_Fornecedor, U_Produto, U_Forma_Pgto,
-  U_Compra;
+  U_Compra, U_Venda;
 
 procedure TFrm_Principal.abre_tela_cliente;
 begin
@@ -95,7 +99,7 @@ end;
 
 procedure TFrm_Principal.abre_tela_compra;
 begin
-   Frm_Compra := TFrm_Compra.Create(self);
+  Frm_Compra := TFrm_Compra.Create(self);
   Frm_Compra.ShowModal;
   try
 
@@ -124,8 +128,8 @@ begin
   try
 
   finally
-   Frm_Forma_pgto.Free;
-   Frm_Forma_pgto := nil;
+    Frm_Forma_pgto.Free;
+    Frm_Forma_pgto := nil;
   end;
 end;
 
@@ -165,6 +169,19 @@ begin
   end;
 end;
 
+procedure TFrm_Principal.abre_tela_venda;
+begin
+  Frm_Venda := TFrm_Venda.Create(Self);
+  Frm_Venda.ShowModal;
+
+  try
+
+  finally
+    Frm_venda.Free;
+    Frm_venda := nil;
+  end;
+end;
+
 procedure TFrm_Principal.Bt_UsuarioClick(Sender: TObject);
 begin
   abre_tela_usuario;
@@ -187,7 +204,7 @@ end;
 
 procedure TFrm_Principal.FormaPgto1Click(Sender: TObject);
 begin
- abre_tela_forma_pgto;
+  abre_tela_forma_pgto;
 end;
 
 procedure TFrm_Principal.Fornecedores1Click(Sender: TObject);
@@ -197,7 +214,7 @@ end;
 
 procedure TFrm_Principal.Produtos1Click(Sender: TObject);
 begin
- abre_tela_produto;
+  abre_tela_produto;
 end;
 
 procedure TFrm_Principal.SpeedButton10Click(Sender: TObject);
@@ -220,9 +237,14 @@ begin
   abre_tela_fornecedor;
 end;
 
+procedure TFrm_Principal.SpeedButton5Click(Sender: TObject);
+begin
+  abre_tela_venda;
+end;
+
 procedure TFrm_Principal.SpeedButton6Click(Sender: TObject);
 begin
-   abre_tela_forma_pgto;
+  abre_tela_forma_pgto;
 end;
 
 procedure TFrm_Principal.SpeedButton7Click(Sender: TObject);
@@ -232,7 +254,7 @@ end;
 
 procedure TFrm_Principal.SpeedButton9Click(Sender: TObject);
 begin
- abre_tela_compra;
+  abre_tela_compra;
 end;
 
 procedure TFrm_Principal.Timer1Timer(Sender: TObject);
@@ -245,6 +267,11 @@ end;
 procedure TFrm_Principal.Usurio1Click(Sender: TObject);
 begin
   abre_tela_usuario;
+end;
+
+procedure TFrm_Principal.Vendas1Click(Sender: TObject);
+begin
+ abre_tela_venda;
 end;
 
 end.

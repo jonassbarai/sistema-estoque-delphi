@@ -153,6 +153,10 @@ type
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure Btn_deletarClick(Sender: TObject);
+    procedure DB_QTDEExit(Sender: TObject);
+    procedure Btn_AlterarClick(Sender: TObject);
+    procedure Btn_GravarClick(Sender: TObject);
+    procedure DB_DescontoExit(Sender: TObject);
   private
     { Private declarations }
   public
@@ -172,8 +176,12 @@ procedure TFrm_Compra.BitBtn1Click(Sender: TObject);
 var
   proximo: integer;
 begin
-  if q_padrao_itemID_COMPRA.AsInteger < 0 then
+  DB_ID_Produto.Enabled := true;
+  if q_padraoID_COMPRA.AsInteger <= 0 then
+  begin
+    tratarBotoes;
     q_padrao.Post;
+  end;
 
   q_padrao_item.Edit;
   q_padrao_item.Last;
@@ -186,11 +194,10 @@ end;
 
 procedure TFrm_Compra.BitBtn2Click(Sender: TObject);
 begin
-  // post para gravar o valor total
-  q_padrao.Post;
 
   // atualiza o estoque
   q_produto.Edit;
+  //q_padrao_item.Edit;
   q_padrao_item.First;
   while not q_padrao_item.eof do
   begin
@@ -206,6 +213,7 @@ begin
     q_produto.Refresh;
   end;
   MessageDlg('Estoque atualizado com sucesso!', mtInformation, [mbOK], 0);
+    if Btn_Gravar.Enabled then  tratarBotoes;
 end;
 
 procedure TFrm_Compra.BitBtn3Click(Sender: TObject);
@@ -227,6 +235,13 @@ begin
   else
     abort
 
+end;
+
+procedure TFrm_Compra.Btn_AlterarClick(Sender: TObject);
+begin
+  inherited;
+  DB_ID_Produto.Enabled := true;
+  tratarBotoes;
 end;
 
 procedure TFrm_Compra.Btn_deletarClick(Sender: TObject);
@@ -255,6 +270,12 @@ begin
 
 end;
 
+procedure TFrm_Compra.Btn_GravarClick(Sender: TObject);
+begin
+  inherited;
+  DB_ID_Fornecedor.Enabled := false;
+end;
+
 procedure TFrm_Compra.Btn_NovoClick(Sender: TObject);
 begin
   inherited;
@@ -262,6 +283,20 @@ begin
   q_padraoUSUARIO.AsString := 'Jonas';
   q_padraoVALOR.AsCurrency := 0.00;
   DB_ID_Fornecedor.SetFocus;
+
+end;
+
+procedure TFrm_Compra.DB_DescontoExit(Sender: TObject);
+begin
+  if q_padrao_itemID_PRODUTO.AsInteger > 0 then q_padrao_item.Edit;
+  q_padrao_itemTOTAL_ITEM.AsFloat :=
+    (q_padrao_itemQTDE.AsFloat * q_padrao_itemVL_CUSTO.AsFloat) -
+    (q_padrao_itemDESCONTO.AsFloat);
+  q_padrao_item.Post;
+  q_padrao.Edit;
+  q_padraoVALOR.AsFloat := q_padrao_item.AggFields.FieldByName
+    ('TOTALCOMPRA').Value;
+  q_padrao.Post;
 
 end;
 
@@ -283,6 +318,7 @@ begin
       q_padrao.Edit;
       q_padraoVALOR.AsFloat := q_padrao_item.AggFields.FieldByName
         ('TOTALCOMPRA').Value;
+      q_padrao.Post;
       BtAdd.SetFocus;
     end
     else
@@ -291,6 +327,25 @@ begin
       q_padrao_item.Cancel;
       BtAdd.SetFocus
     end
+
+end;
+
+procedure TFrm_Compra.DB_QTDEExit(Sender: TObject);
+begin
+  if q_padrao_itemID_PRODUTO.AsInteger > 0 then
+    if q_produto.Locate('ID_PRODUTO', q_padrao_item.FieldByName('ID_PRODUTO')
+      .AsInteger, []) then
+    begin
+    if q_padrao_itemID_PRODUTO.AsInteger > 0 then q_padrao_item.Edit;
+      q_padrao_itemTOTAL_ITEM.AsFloat :=
+        (q_padrao_itemQTDE.AsFloat * q_padrao_itemVL_CUSTO.AsFloat) -
+        (q_padrao_itemDESCONTO.AsFloat);
+      q_padrao_item.Post;
+      q_padrao.Edit;
+      q_padraoVALOR.AsFloat := q_padrao_item.AggFields.FieldByName
+        ('TOTALCOMPRA').Value;
+      q_padrao.Post;
+    end;
 
 end;
 
