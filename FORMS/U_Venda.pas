@@ -73,6 +73,8 @@ type
     procedure DB_DescontoExit(Sender: TObject);
     procedure Btn_deletarClick(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
+    procedure Btn_PesquisarClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -86,7 +88,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_DM;
+uses U_DM, U_Pesq_Venda;
 
 procedure TFrm_Venda.BitBtn2Click(Sender: TObject);
 begin
@@ -181,9 +183,28 @@ procedure TFrm_Venda.Btn_NovoClick(Sender: TObject);
 begin
   inherited;
   DB_CADASTRO.Text := DateToStr(now);
-  DB_USUARIO.Text := 'JONAS';
+  DB_USUARIO.Text := dm.usuario;
   DB_VALOR.Text := IntToStr(0);
   DB_ID_CLIENTE.SetFocus;
+
+end;
+
+procedure TFrm_Venda.Btn_PesquisarClick(Sender: TObject);
+begin
+  Frm_pesq_venda := TFrm_pesq_venda.Create(Self);
+  Frm_pesq_venda.ShowModal;
+
+  try
+    if Frm_pesq_venda.codigo > 0 then
+    begin
+      q_padrao.Open();
+      q_padrao.Locate('ID_VENDA', Frm_pesq_venda.codigo, []);
+      q_padrao_item.Open();
+    end;
+  finally
+    Frm_pesq_venda.Free;
+    Frm_pesq_venda := nil;
+  end;
 
 end;
 
@@ -250,6 +271,13 @@ begin
       q_padrao.Post;
     end;
 
+end;
+
+procedure TFrm_Venda.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  inherited;
+  dm.q_alerta.Close;
+  dm.mostraAlerta;
 end;
 
 end.

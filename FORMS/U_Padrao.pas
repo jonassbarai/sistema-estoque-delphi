@@ -57,9 +57,10 @@ begin
   begin
     q_padrao.Edit;
   end
-  else
+  else begin
     tratarBotoes;
     abort
+  end;
 end;
 
 procedure TFrm_Padrao.Btn_AtualizarClick(Sender: TObject);

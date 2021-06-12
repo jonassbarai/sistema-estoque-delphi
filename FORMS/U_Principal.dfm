@@ -14,6 +14,7 @@ object Frm_Principal: TFrm_Principal
   OldCreateOrder = False
   Position = poDesktopCenter
   ShowHint = True
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 17
   object Panel_principal: TPanel
@@ -558,7 +559,7 @@ object Frm_Principal: TFrm_Principal
       ParentFont = False
       OnClick = Bt_UsuarioClick
     end
-    object SpeedButton2: TSpeedButton
+    object BtnEmpresa: TSpeedButton
       Left = 105
       Top = 0
       Width = 90
@@ -1089,7 +1090,7 @@ object Frm_Principal: TFrm_Principal
         000000000000}
       Layout = blGlyphTop
       ParentFont = False
-      OnClick = SpeedButton2Click
+      OnClick = BtnEmpresaClick
     end
     object SpeedButton3: TSpeedButton
       Left = 205
@@ -2690,7 +2691,7 @@ object Frm_Principal: TFrm_Principal
       ParentFont = False
       OnClick = SpeedButton5Click
     end
-    object SpeedButton6: TSpeedButton
+    object BtnFormaPgto: TSpeedButton
       Left = 496
       Top = 0
       Width = 90
@@ -3221,7 +3222,7 @@ object Frm_Principal: TFrm_Principal
         000000000000}
       Layout = blGlyphTop
       ParentFont = False
-      OnClick = SpeedButton6Click
+      OnClick = BtnFormaPgtoClick
     end
     object SpeedButton7: TSpeedButton
       Left = 888
@@ -4287,6 +4288,7 @@ object Frm_Principal: TFrm_Principal
         000000000000}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = SpeedButton8Click
     end
     object SpeedButton9: TSpeedButton
       Left = 594
@@ -5368,13 +5370,82 @@ object Frm_Principal: TFrm_Principal
         Width = 150
       end
       item
-        Width = 100
+        Width = 300
+      end
+      item
+        Width = 150
       end>
+  end
+  object PAlerta: TPanel
+    Left = 192
+    Top = 112
+    Width = 649
+    Height = 337
+    ShowCaption = False
+    TabOrder = 2
+    Visible = False
+    object Label1: TLabel
+      Left = 1
+      Top = 1
+      Width = 647
+      Height = 26
+      Align = alTop
+      Alignment = taCenter
+      Caption = 'ALERTA! H'#193' PRODUTOS COM ESTOQUE M'#205'NIMO '
+      Color = 183
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -20
+      Font.Name = 'Yu Gothic'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      ExplicitWidth = 492
+    end
+    object DBGrid1: TDBGrid
+      Left = 13
+      Top = 33
+      Width = 636
+      Height = 304
+      DataSource = DM.ds_alerta
+      TabOrder = 0
+      TitleFont.Charset = ANSI_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -13
+      TitleFont.Name = 'Yu Gothic'
+      TitleFont.Style = [fsBold]
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'ID_PRODUTO'
+          Title.Caption = 'ID PRODUTO'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'DESCRICAO'
+          Title.Caption = 'DESCRI'#199#195'O'
+          Width = 250
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'ESTOQUE_MIN'
+          Title.Caption = 'M'#205'NIMO'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'ESTOQUE'
+          Visible = True
+        end>
+    end
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer
-    Left = 24
-    Top = 528
+    Left = 32
+    Top = 184
   end
   object MainMenu1: TMainMenu
     Left = 32

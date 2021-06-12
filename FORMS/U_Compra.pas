@@ -157,6 +157,8 @@ type
     procedure Btn_AlterarClick(Sender: TObject);
     procedure Btn_GravarClick(Sender: TObject);
     procedure DB_DescontoExit(Sender: TObject);
+    procedure Btn_PesquisarClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -170,7 +172,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_DM;
+uses U_DM, U_pesq_Compra;
 
 procedure TFrm_Compra.BitBtn1Click(Sender: TObject);
 var
@@ -197,7 +199,7 @@ begin
 
   // atualiza o estoque
   q_produto.Edit;
-  //q_padrao_item.Edit;
+  // q_padrao_item.Edit;
   q_padrao_item.First;
   while not q_padrao_item.eof do
   begin
@@ -213,7 +215,8 @@ begin
     q_produto.Refresh;
   end;
   MessageDlg('Estoque atualizado com sucesso!', mtInformation, [mbOK], 0);
-    if Btn_Gravar.Enabled then  tratarBotoes;
+  if Btn_Gravar.Enabled then
+    tratarBotoes;
 end;
 
 procedure TFrm_Compra.BitBtn3Click(Sender: TObject);
@@ -280,15 +283,35 @@ procedure TFrm_Compra.Btn_NovoClick(Sender: TObject);
 begin
   inherited;
   q_padraoCADASTRO.AsDateTime := Date;
-  q_padraoUSUARIO.AsString := 'Jonas';
+  q_padraoUSUARIO.AsString := dm.usuario;
   q_padraoVALOR.AsCurrency := 0.00;
   DB_ID_Fornecedor.SetFocus;
 
 end;
 
+procedure TFrm_Compra.Btn_PesquisarClick(Sender: TObject);
+begin
+  Frm_pesq_compra := TFrm_pesq_compra.Create(Self);
+  Frm_pesq_compra.ShowModal;
+
+  try
+    if Frm_pesq_compra.codigo > 0 then
+    begin
+      q_padrao.Open();
+      q_padrao.Locate('ID_Compra', Frm_pesq_compra.codigo, []);
+      q_padrao_item.Open();
+    end;
+  finally
+    Frm_pesq_compra.Free;
+    Frm_pesq_compra := nil;
+  end;
+
+end;
+
 procedure TFrm_Compra.DB_DescontoExit(Sender: TObject);
 begin
-  if q_padrao_itemID_PRODUTO.AsInteger > 0 then q_padrao_item.Edit;
+  if q_padrao_itemID_PRODUTO.AsInteger > 0 then
+    q_padrao_item.Edit;
   q_padrao_itemTOTAL_ITEM.AsFloat :=
     (q_padrao_itemQTDE.AsFloat * q_padrao_itemVL_CUSTO.AsFloat) -
     (q_padrao_itemDESCONTO.AsFloat);
@@ -336,7 +359,8 @@ begin
     if q_produto.Locate('ID_PRODUTO', q_padrao_item.FieldByName('ID_PRODUTO')
       .AsInteger, []) then
     begin
-    if q_padrao_itemID_PRODUTO.AsInteger > 0 then q_padrao_item.Edit;
+      if q_padrao_itemID_PRODUTO.AsInteger > 0 then
+        q_padrao_item.Edit;
       q_padrao_itemTOTAL_ITEM.AsFloat :=
         (q_padrao_itemQTDE.AsFloat * q_padrao_itemVL_CUSTO.AsFloat) -
         (q_padrao_itemDESCONTO.AsFloat);
@@ -347,6 +371,13 @@ begin
       q_padrao.Post;
     end;
 
+end;
+
+procedure TFrm_Compra.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  inherited;
+  DM.q_alerta.Close;
+  Dm.mostraAlerta;
 end;
 
 end.

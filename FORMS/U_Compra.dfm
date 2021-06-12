@@ -15,6 +15,9 @@ inherited Frm_Compra: TFrm_Compra
       ExplicitLeft = 130
       ExplicitTop = 6
     end
+    inherited Btn_Pesquisar: TBitBtn
+      OnClick = Btn_PesquisarClick
+    end
   end
   inherited Panel2: TPanel
     Top = 506

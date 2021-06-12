@@ -175,6 +175,18 @@
             <Form>Frm_Venda</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="..\FORMS\U_pesq_Compra.pas">
+            <Form>Frm_pesq_compra</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\FORMS\U_Pesq_Venda.pas">
+            <Form>Frm_pesq_venda</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\FORMS\U_Login.pas">
+            <Form>Frm_login</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

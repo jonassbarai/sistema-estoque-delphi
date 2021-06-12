@@ -19,14 +19,17 @@ uses
   U_Pesq_Forma_Pgto in '..\FORMS\U_Pesq_Forma_Pgto.pas' {Frm_Pesq_Forma_Pgto},
   U_Padrao_Movimento in '..\FORMS\U_Padrao_Movimento.pas' {Frm_Padrao_Movimento},
   U_Compra in '..\FORMS\U_Compra.pas' {Frm_Compra},
-  U_Venda in '..\FORMS\U_Venda.pas' {Frm_Venda};
+  U_Venda in '..\FORMS\U_Venda.pas' {Frm_Venda},
+  U_pesq_Compra in '..\FORMS\U_pesq_Compra.pas' {Frm_pesq_compra},
+  U_Pesq_Venda in '..\FORMS\U_Pesq_Venda.pas' {Frm_pesq_venda},
+  U_Login in '..\FORMS\U_Login.pas' {Frm_login};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TFrm_Principal, Frm_Principal);
   Application.CreateForm(TDM, DM);
+  Application.CreateForm(TFrm_login, Frm_login);
   Application.Run;
 end.

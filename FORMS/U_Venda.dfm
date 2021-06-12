@@ -1,10 +1,14 @@
 inherited Frm_Venda: TFrm_Venda
   Caption = 'Vendas'
   ClientHeight = 559
-  ExplicitTop = -69
   ExplicitHeight = 588
   PixelsPerInch = 96
   TextHeight = 13
+  inherited Panel_usuario: TPanel
+    inherited Btn_Pesquisar: TBitBtn
+      OnClick = Btn_PesquisarClick
+    end
+  end
   inherited Panel2: TPanel
     Top = 504
     ExplicitTop = 504
