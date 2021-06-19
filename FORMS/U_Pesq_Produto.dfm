@@ -40,7 +40,6 @@ inherited Frm_Pesq_Produto: TFrm_Pesq_Produto
         Expanded = False
         FieldName = 'VL_CUSTO'
         Title.Caption = 'Valor Custo'
-        Width = 64
         Visible = True
       end
       item
@@ -53,21 +52,18 @@ inherited Frm_Pesq_Produto: TFrm_Pesq_Produto
         Expanded = False
         FieldName = 'ESTOQUE'
         Title.Caption = 'Estoque'
-        Width = 64
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'ESTOQUE_MIN'
         Title.Caption = 'Estoque Min'
-        Width = 64
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'UNIDADE'
         Title.Caption = 'Unidade'
-        Width = 64
         Visible = True
       end
       item
@@ -80,7 +76,6 @@ inherited Frm_Pesq_Produto: TFrm_Pesq_Produto
         Expanded = False
         FieldName = 'ID_FORNECEDOR'
         Title.Caption = 'ID Fornecedor'
-        Width = 64
         Visible = True
       end
       item
@@ -159,5 +154,10 @@ inherited Frm_Pesq_Produto: TFrm_Pesq_Produto
       ReadOnly = True
       Size = 100
     end
+  end
+  inherited rel_pesq_padrao: TfrxReport
+    Datasets = <>
+    Variables = <>
+    Style = <>
   end
 end

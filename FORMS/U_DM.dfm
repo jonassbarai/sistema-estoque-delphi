@@ -27,8 +27,8 @@ object DM: TDM
     Top = 16
   end
   object ds_login: TDataSource
-    Left = 144
-    Top = 88
+    Left = 160
+    Top = 72
   end
   object q_login: TFDQuery
     Connection = Conexao
@@ -45,11 +45,32 @@ object DM: TDM
         'select ID_PRODUTO, DESCRICAO, ESTOQUE_MIN, ESTOQUE from produto ' +
         'Where estoque_min >= estoque')
     Left = 72
-    Top = 160
+    Top = 144
   end
   object ds_alerta: TDataSource
     DataSet = q_alerta
-    Left = 136
-    Top = 160
+    Left = 160
+    Top = 144
+  end
+  object q_balanco: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      
+        'select p.id_produto,  p.descricao, sum( distinct iv.qtde)as qtde' +
+        '_vendido,sum(distinct ic.qtde)as qtde_comprado from produto p'
+      'left join item_venda iv on (iv.id_produto=p.id_produto)'
+      'left join venda v on (v.id_venda =iv.id_venda)'
+      'left join  item_compra ic on (ic.id_produto=p.id_produto)'
+      'left join  compra c on (c.id_compra =ic.id_compra)'
+      
+        'where( extract(month from c.cadastro) = 6 or extract(month from ' +
+        'v.cadastro) = 6)'
+      
+        'and  (extract(year from v.cadastro) = 2021 or  extract(year from' +
+        ' c.cadastro) = 2021)'
+      'group by p.id_produto, p.descricao')
+    Left = 72
+    Top = 216
   end
 end

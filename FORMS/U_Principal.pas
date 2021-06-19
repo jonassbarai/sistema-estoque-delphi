@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.ExtCtrls, Vcl.ComCtrls,
-  Vcl.Menus, Vcl.StdCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids;
+  Vcl.Menus, Vcl.StdCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids, frxClass, frxDBSet;
 
 type
   TFrm_Principal = class(TForm)
@@ -46,6 +46,9 @@ type
     PAlerta: TPanel;
     Label1: TLabel;
     DBGrid1: TDBGrid;
+    BtnBalanco: TSpeedButton;
+    rel_balanco: TfrxReport;
+    db_rel_balanco: TfrxDBDataset;
     procedure SpeedButton7Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure Bt_UsuarioClick(Sender: TObject);
@@ -75,6 +78,7 @@ type
     procedure Vendas1Click(Sender: TObject);
     procedure SpeedButton8Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure BtnBalancoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -231,8 +235,8 @@ begin
     BtnFormaPgto.Enabled := false;
   end;
 
-  DM.q_alerta.Close;
-  Dm.mostraAlerta;
+  dm.q_alerta.Close;
+  dm.mostraAlerta;
 
 end;
 
@@ -249,6 +253,47 @@ end;
 procedure TFrm_Principal.SpeedButton10Click(Sender: TObject);
 begin
   abre_tela_produto;
+end;
+
+procedure TFrm_Principal.BtnBalancoClick(Sender: TObject);
+var
+  vdata, caminho: string;
+  mes, ano: integer;
+begin
+  InputQuery('mes e ano do balanço',
+    'digite o mes e ano no formato MM/YYYY ', vdata);
+
+  mes := strtoint(Copy(vdata, 0, 2));
+  ano := strtoint(Copy(vdata, 4, 6));
+
+  DM.q_balanco.Close; // fecha
+  DM.q_balanco.Params.Clear; // limpamos os parametros
+  DM.q_balanco.SQL.Clear; // limPa o sql
+  DM.q_balanco.SQL.Add('select p.id_produto,  p.descricao, sum( distinct iv.qtde)as qtde_vendido,sum(distinct ic.qtde)as qtde_comprado from produto p'+
+  ' left join item_venda iv on (iv.id_produto=p.id_produto)' +
+  ' left join venda v on (v.id_venda =iv.id_venda)' +
+  ' left join  item_compra ic on (ic.id_produto=p.id_produto)' +
+  ' left join  compra c on (c.id_compra =ic.id_compra)'+
+  ' where( extract(month from c.cadastro) = :Pmes or extract(month from v.cadastro) = :Pmes)'+
+  ' and  (extract(year from v.cadastro) = :Pano or  extract(year from c.cadastro) = :Pano)'+
+  ' group by p.id_produto, p.descricao');
+
+  DM.q_balanco.ParamByName('Pmes').AsInteger := mes;
+  DM.q_balanco.ParamByName('Pano').AsInteger := ano;
+  DM.q_balanco.Open;
+
+  caminho := Extractfilepath(Application.ExeName);
+  if rel_balanco.LoadFromFile(caminho + 'rel_balanco.fr3')
+  then
+  begin
+    rel_balanco.Clear;
+    rel_balanco.LoadFromFile(caminho + 'rel_balanco.fr3');
+    rel_balanco.PrepareReport(true);
+    rel_balanco.ShowPreparedReport;
+  end
+  else
+    MessageDlg('Relatório não encontrado', mtInformation, [mbOK], 0);
+
 end;
 
 procedure TFrm_Principal.BtnEmpresaClick(Sender: TObject);

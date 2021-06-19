@@ -9,7 +9,7 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.Buttons,
-  Vcl.Grids, Vcl.DBGrids, Vcl.Mask, Vcl.ExtCtrls;
+  Vcl.Grids, Vcl.DBGrids, Vcl.Mask, Vcl.ExtCtrls, frxClass, frxDBSet;
 
 type
   TFrm_pesquisa_padrao = class(TForm)
@@ -29,6 +29,8 @@ type
     bt_imprimir: TBitBtn;
     q_pesq_padrao: TFDQuery;
     ds_padrao: TDataSource;
+    ds_pesq_padrao: TfrxDBDataset;
+    rel_pesq_padrao: TfrxReport;
     procedure cb_chave_pesquisaChange(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);

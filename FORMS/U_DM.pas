@@ -19,6 +19,7 @@ type
     q_login: TFDQuery;
     q_alerta: TFDQuery;
     ds_alerta: TDataSource;
+    q_balanco: TFDQuery;
   private
     { Private declarations }
   public
