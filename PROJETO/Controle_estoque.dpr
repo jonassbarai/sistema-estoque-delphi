@@ -22,7 +22,8 @@ uses
   U_Venda in '..\FORMS\U_Venda.pas' {Frm_Venda},
   U_pesq_Compra in '..\FORMS\U_pesq_Compra.pas' {Frm_pesq_compra},
   U_Pesq_Venda in '..\FORMS\U_Pesq_Venda.pas' {Frm_pesq_venda},
-  U_Login in '..\FORMS\U_Login.pas' {Frm_login};
+  U_Login in '..\FORMS\U_Login.pas' {Frm_login},
+  U_Ajuda in '..\FORMS\U_Ajuda.pas' {Frm_Ajuda};
 
 {$R *.res}
 
@@ -31,5 +32,6 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TFrm_login, Frm_login);
+  Application.CreateForm(TFrm_Ajuda, Frm_Ajuda);
   Application.Run;
 end.

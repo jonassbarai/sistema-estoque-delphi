@@ -21,6 +21,7 @@ inherited Frm_Padrao_Movimento: TFrm_Padrao_Movimento
       Top = 6
       Width = 55
       Height = 43
+      Hint = 'Adiciona um item na Compra'
       Caption = 'add'
       Glyph.Data = {
         F6060000424DF606000000000000360000002800000018000000180000000100
@@ -86,6 +87,7 @@ inherited Frm_Padrao_Movimento: TFrm_Padrao_Movimento
       Top = 6
       Width = 55
       Height = 43
+      Hint = 'Baixa no estoque'
       Caption = 'OK'
       Glyph.Data = {
         F6060000424DF606000000000000360000002800000018000000180000000100
@@ -151,6 +153,7 @@ inherited Frm_Padrao_Movimento: TFrm_Padrao_Movimento
       Top = 6
       Width = 65
       Height = 43
+      Hint = 'Retira o Produto'
       Caption = 'cancel'
       Glyph.Data = {
         F6060000424DF606000000000000360000002800000018000000180000000100
@@ -216,6 +219,7 @@ inherited Frm_Padrao_Movimento: TFrm_Padrao_Movimento
       Top = 6
       Width = 73
       Height = 43
+      Hint = 'Tela de Impress'#227'o'
       Caption = 'imprimir'
       Glyph.Data = {
         F6060000424DF606000000000000360000002800000018000000180000000100

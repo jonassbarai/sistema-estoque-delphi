@@ -26,7 +26,6 @@ object Frm_Principal: TFrm_Principal
     Color = clSkyBlue
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1000
     object Bt_Usuario: TSpeedButton
       Left = 9
       Top = 0
@@ -5362,7 +5361,7 @@ object Frm_Principal: TFrm_Principal
       Top = 0
       Width = 90
       Height = 90
-      Hint = 'Trocar o Usu'#225'rio do sistema'
+      Hint = 'Relat'#243'rio Mensal'
       Caption = 'Balan'#231'o'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -5909,20 +5908,19 @@ object Frm_Principal: TFrm_Principal
       item
         Width = 150
       end>
-    ExplicitWidth = 1000
   end
   object PAlerta: TPanel
     Left = 240
     Top = 152
-    Width = 649
-    Height = 337
+    Width = 665
+    Height = 345
     ShowCaption = False
     TabOrder = 2
     Visible = False
     object Label1: TLabel
       Left = 1
       Top = 1
-      Width = 647
+      Width = 663
       Height = 26
       Align = alTop
       Alignment = taCenter
@@ -5941,9 +5939,10 @@ object Frm_Principal: TFrm_Principal
     object DBGrid1: TDBGrid
       Left = 13
       Top = 33
-      Width = 636
-      Height = 304
+      Width = 652
+      Height = 312
       DataSource = DM.ds_alerta
+      ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = ANSI_CHARSET
       TitleFont.Color = clWindowText
@@ -6048,6 +6047,7 @@ object Frm_Principal: TFrm_Principal
       Caption = 'Sobre o Sistema'
       object Ajuda1: TMenuItem
         Caption = 'Ajuda'
+        OnClick = Ajuda1Click
       end
     end
   end

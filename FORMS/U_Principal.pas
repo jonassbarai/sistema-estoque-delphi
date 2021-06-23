@@ -79,6 +79,7 @@ type
     procedure SpeedButton8Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure BtnBalancoClick(Sender: TObject);
+    procedure Ajuda1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -93,7 +94,7 @@ implementation
 {$R *.dfm}
 
 uses U_Usuario, U_Empresa, U_Cliente, U_Fornecedor, U_Produto, U_Forma_Pgto,
-  U_Compra, U_Venda, U_Login, U_DM;
+  U_Compra, U_Venda, U_Login, U_DM, U_Ajuda;
 
 procedure TFrm_Principal.abre_tela_cliente;
 begin
@@ -199,6 +200,19 @@ begin
     Frm_Venda.Free;
     Frm_Venda := nil;
   end;
+end;
+
+procedure TFrm_Principal.Ajuda1Click(Sender: TObject);
+begin
+ Frm_Ajuda := TFrm_Ajuda.Create(self);
+ Frm_Ajuda.ShowModal;
+ try
+ 
+ finally
+    Frm_Ajuda.Free;
+    Frm_Ajuda :=nil;
+ end;
+ 
 end;
 
 procedure TFrm_Principal.Bt_UsuarioClick(Sender: TObject);

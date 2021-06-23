@@ -187,6 +187,10 @@
             <Form>Frm_login</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="..\FORMS\U_Ajuda.pas">
+            <Form>Frm_Ajuda</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
